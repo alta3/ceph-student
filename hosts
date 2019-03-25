@@ -1,0 +1,13 @@
+[clients]
+localhost
+
+[mons]
+master1 ansible_host=ceph-{{ studentnumber }}-master01.localdomain   ansible_user=ubuntu monitor_address_block=10.0.0.0/12 public_network=10.0.0.0/12
+master2 ansible_host=ceph-{{ studentnumber }}-master02.localdomain   ansible_user=ubuntu monitor_address_block=10.0.0.0/12 public_network=10.0.0.0/12
+master3 ansible_host=ceph-{{ studentnumber }}-master03.localdomain   ansible_user=ubuntu monitor_address_block=10.0.0.0/12 public_network=10.0.0.0/12
+
+[osds]
+node1   ansible_host=ceph-{{ studentnumber }}-node01.localdomain ansible_user=ubuntu monitor_address_block=10.0.0.0/12 public_network=10.0.0.0/12 devices="['/dev/vdb']"
+node2   ansible_host=ceph-{{ studentnumber }}-node02.localdomain ansible_user=ubuntu monitor_address_block=10.0.0.0/12 public_network=10.0.0.0/12 devices="['/dev/vdb']"
+node3   ansible_host=ceph-{{ studentnumber }}-node03.localdomain ansible_user=ubuntu monitor_address_block=10.0.0.0/12 public_network=10.0.0.0/12 devices="['/dev/vdb']"
+
